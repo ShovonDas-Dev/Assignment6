@@ -3,10 +3,10 @@ import HerImage from "../../../../public/banner.png";
 
 const HeroSection = () => {
   return (
-    <section className="w-full px-3 py-4">
+    <section className="mx-auto max-w-[1400px] px-3 py-4">
       <div
         className="
-          flex flex-col overflow-hidden rounded-lg border border-[#25282f]
+          flex flex-col  rounded-lg border border-[#25282f]
           bg-[#15171c] px-5 py-6
           sm:px-6 sm:py-8
           md:flex-row md:px-8 md:py-8
@@ -79,7 +79,7 @@ const HeroSection = () => {
         {/* Right Workout Image */}
         <div
           className="
-            flex w-full items-center justify-center
+            flex items-center justify-center
             pt-4
             sm:pt-5
             md:w-[40%] md:pt-0

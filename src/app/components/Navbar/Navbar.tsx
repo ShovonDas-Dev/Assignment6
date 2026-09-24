@@ -4,14 +4,14 @@ import Link from 'next/link'
 import MobileNavToggle from './MobileNavToggle'
 
 const links = [
-  <Link key="Workouts" href="/Workouts"><li><button>Workouts</button></li></Link>,
+  <Link key="Workouts" href="/"><li><button>Workouts</button></li></Link>,
   <Link key="My-Plan" href="/MyPlan"><li><button>My Plan</button></li></Link>
 
 ]
 const Navbar = () => {
   return (
-    <div className=' border-b border-gray-800'>
-      <div className=" max-w-7xl mx-auto max-lg:collapse shadow-sm w-full rounded-md">
+    <div className='max-w-[1400px] mx-auto border-b border-gray-800'>
+      <div className=" max-lg:collapse shadow-sm w-full rounded-md">
         <input id="navbar-1-toggle" className="peer hidden" type="checkbox" />
         <label htmlFor="navbar-1-toggle" className="fixed inset-0 hidden max-lg:peer-checked:block"></label>
         <div className="collapse-title navbar">

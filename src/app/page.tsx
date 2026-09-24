@@ -1,4 +1,6 @@
+
 import HeroSection from "./components/Hero/HeroSection";
+import CartSection from "./equipment/page";
 
 
 export default function Home() {
@@ -6,6 +8,7 @@ export default function Home() {
     <>
       
      <HeroSection/>
+     <CartSection/>
       
     </>
   );
