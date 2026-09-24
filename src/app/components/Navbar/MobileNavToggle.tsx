@@ -1,26 +1,36 @@
 "use client";
 
-import React from 'react'
+import Link from "next/link";
+import { useState } from "react";
 
-const MobileNavToggle = () => {
+export default function MobileNavToggle() {
+  const [planCount, setplanCount] = useState(0);
+  const [savedCount, setsavedCount] = useState(0);
+
   return (
-    <div>
-      <div className='flex gap-5'>
-       <div className='flex gap-3'>
-         <button>Plan</button>
+    <div className="flex items-center gap-6  px-4 py-3">
+      {/* Plan Button */}
+      <Link href="/MyPlan">
+        <button className="flex items-center gap-2 text-sm text-gray-300  cursor-pointer">
+        <span>Plan</span>
 
-        {/* Working in this button section */}
+        <span className="flex h-6 w-6 items-center justify-center rounded-full text-xs font-medium bg-[#c6ff00] text-black">
+          {planCount}
+        </span>
+      </button>
+      </Link>
 
-         <span className='p-2 bg-{#C2F800} rounded-full'>0</span>
-       </div>
-        <div className='flex gap-3'>
-          <button>Saved</button>
-          <span>0</span>
-        </div>
-      </div>
-      
+      {/* Saved Button */}
+        <Link href="/MyPlan">
+                <button className="flex items-center gap-2 text-sm text-gray-300  cursor-pointer">
+        <span>Saved</span>
+
+        <span className="flex h-6 w-6 items-center justify-center rounded-full text-xs font-medium bg-[#c6ff00] text-black">
+          {savedCount}
+        </span>
+      </button>
+      </Link>
     </div>
-  )
+  );
 }
 
-export default MobileNavToggle
