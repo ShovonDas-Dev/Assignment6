@@ -1,4 +1,5 @@
 import PlanButton from "../components/Plan/PlanButton"
+import PlanTab from "../components/Plan/PlanTab"
 
 
 const page = () => {
@@ -11,7 +12,8 @@ const page = () => {
       {/* Counter */}
 
       <PlanButton/>
-
+        {/*tab Buttone  */}
+        <PlanTab/>
 
     </div>
   )

@@ -1,6 +1,8 @@
-import React from 'react'
+import { EquipmentContext } from '@/app/context/CartContext'
+import React, { useContext } from 'react'
 
 const PlanButton = () => {
+    // const {} = useContext(EquipmentContext)
   return (
     <div className='grid grid-cols-3  py-8 my-10 bg-black rounded-2xl  '>
         <div className='flex flex-col items-center'>
