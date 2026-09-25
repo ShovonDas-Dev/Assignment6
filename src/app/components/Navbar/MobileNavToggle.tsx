@@ -18,7 +18,7 @@ export default function MobileNavToggle() {
   return (
     <div className="flex items-center gap-6 px-4 py-3">
       {/* Plan Button */}
-      <Link href="/MyPlan">
+      <Link href="/myPlan">
         <button className="flex cursor-pointer items-center gap-2 text-sm text-gray-300">
           <span>Plan</span>
 
@@ -29,7 +29,7 @@ export default function MobileNavToggle() {
       </Link>
 
       {/* Saved Button */}
-      <Link href="/MyPlan">
+      <Link href="/myPlan">
         <button className="flex cursor-pointer items-center gap-2 text-sm text-gray-300">
           <span>Saved</span>
 

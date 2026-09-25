@@ -16,23 +16,24 @@ const oswald = Oswald({
   variable: "--font-oswald",
 });
 
-export default function RootLayout({ children }:LayoutProps<"/">) {
+export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${oswald.variable}  ` }>
+      <body className={`${inter.variable} ${oswald.variable}  `}>
         <CartProvider>
-         <ToastContainer
-  toastStyle={{
-    maxWidth: '200px',
-    minHeight: '50px',
-    fontSize: '13px',
-    padding: '8px 12px'
-  }}
-/>
-        <Navbar/>
-        {children}
+          <ToastContainer
+            toastStyle={{
+              maxWidth: '200px',
+              minHeight: '50px',
+              fontSize: '13px',
+              padding: '8px 12px'
 
-        {/* <Footer/> */}
+            }}
+          />
+          <Navbar />
+          {children}
+
+          {/* <Footer/> */}
         </CartProvider>
       </body>
     </html>

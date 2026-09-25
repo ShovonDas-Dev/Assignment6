@@ -5,7 +5,7 @@ import MobileNavToggle from './MobileNavToggle'
 
 const links = [
   <Link key="Workouts" href="/"><li><button>Workouts</button></li></Link>,
-  <Link key="My-Plan" href="/MyPlan"><li><button>My Plan</button></li></Link>
+  <Link key="My-Plan" href="/myPlan"><li><button>My Plan</button></li></Link>
 
 ]
 const Navbar = () => {
