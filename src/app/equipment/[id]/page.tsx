@@ -1,3 +1,5 @@
+
+import CartButton from '@/app/components/Button/CartButton'
 import Image from 'next/image'
 import React from 'react'
 
@@ -31,12 +33,12 @@ const page = async ({ params }: { params: { id: number } }) => {
                         </h1>
 
                         {/* Description */}
-                        <p className="mt-3 max-w-2xl text-sm leading-6 text-gray-400">
+                        <p className=" font-inter mt-3 max-w-2xl text-sm leading-6 text-gray-400">
                             {equipment.description}
                         </p>
 
                         {/* Muscle Groups */}
-                        <div className="mt-4 flex flex-wrap gap-2">
+                        <div className=" font-inter mt-4 flex flex-wrap gap-2">
                             {equipment.muscleGroups.map((muscle) => (
                                 <span
                                     key={muscle}
@@ -52,77 +54,77 @@ const page = async ({ params }: { params: { id: number } }) => {
 
                             {/* Equipment */}
                             <div className="flex items-center justify-between border-b border-white/5 px-4 py-3">
-                                <span className="text-[10px] font-bold uppercase tracking-wider text-gray-500">
+                                <span className= "font-inter text-[10px] font-bold uppercase tracking-wider text-gray-500">
                                     Equipment
                                 </span>
 
-                                <span className="text-xs text-gray-200">
+                                <span className=" font-inter text-xs text-gray-200">
                                     {equipment.equipment}
                                 </span>
                             </div>
 
                             {/* Difficulty */}
                             <div className="flex items-center justify-between border-b border-white/5 px-4 py-3">
-                                <span className="text-[10px] font-bold uppercase tracking-wider text-gray-500">
+                                <span className=" font-inter text-[10px] font-bold uppercase tracking-wider text-gray-500">
                                     Difficulty
                                 </span>
 
-                                <span className="text-xs text-gray-200">
+                                <span className=" font-inter text-xs text-gray-200">
                                     {equipment.difficulty}
                                 </span>
                             </div>
 
                             {/* Sets */}
                             <div className="flex items-center justify-between border-b border-white/5 px-4 py-3">
-                                <span className="text-[10px] font-bold uppercase tracking-wider text-gray-500">
+                                <span className=" font-inter text-[10px] font-bold uppercase tracking-wider text-gray-500">
                                     Sets
                                 </span>
 
-                                <span className="text-xs text-gray-200">
+                                <span className=" font-inter text-xs text-gray-200">
                                     {equipment.sets}
                                 </span>
                             </div>
 
                             {/* Reps */}
                             <div className="flex items-center justify-between border-b border-white/5 px-4 py-3">
-                                <span className="text-[10px] font-bold uppercase tracking-wider text-gray-500">
+                                <span className=" font-inter text-[10px] font-bold uppercase tracking-wider text-gray-500">
                                     Reps
                                 </span>
 
-                                <span className="text-xs text-gray-200">
+                                <span className=" font-inter text-xs text-gray-200">
                                     {equipment.reps}
                                 </span>
                             </div>
 
                             {/* Duration */}
                             <div className="flex items-center justify-between border-b border-white/5 px-4 py-3">
-                                <span className="text-[10px] font-bold uppercase tracking-wider text-gray-500">
+                                <span className=" font-inter text-[10px] font-bold uppercase tracking-wider text-gray-500">
                                     Duration
                                 </span>
 
-                                <span className="text-xs text-gray-200">
+                                <span className=" font-inter text-xs text-gray-200">
                                     {equipment.duration} min
                                 </span>
                             </div>
 
                             {/* Calories */}
                             <div className="flex items-center justify-between border-b border-white/5 px-4 py-3">
-                                <span className="text-[10px] font-bold uppercase tracking-wider text-gray-500">
+                                <span className=" font-inter text-[10px] font-bold uppercase tracking-wider text-gray-500">
                                     Calories
                                 </span>
 
-                                <span className="text-xs text-gray-200">
+                                <span className=" font-inter text-xs text-gray-200">
                                     {equipment.caloriesBurned} kcal
                                 </span>
                             </div>
 
                             {/* Rating */}
                             <div className="flex items-center justify-between px-4 py-3">
-                                <span className="text-[10px] font-bold uppercase tracking-wider text-gray-500">
+                                <span className=" font-inter text-[10px] font-bold uppercase tracking-wider text-gray-500">
                                     Rating
                                 </span>
 
-                                <span className="text-xs text-gray-200">
+                                <span className=" font-inter text-xs text-gray-200">
                                     {equipment.rating}
                                 </span>
                             </div>
@@ -140,7 +142,7 @@ const page = async ({ params }: { params: { id: number } }) => {
                                         key={index}
                                         className="flex gap-3 text-xs leading-5 text-gray-400"
                                     >
-                                        <span className="shrink-0 text-gray-500">
+                                        <span className="shrink-0 font-inter  text-gray-500">
                                             {index + 1}.
                                         </span>
 
@@ -152,21 +154,7 @@ const page = async ({ params }: { params: { id: number } }) => {
 
                         {/* ================= BUTTONS ================= */}
                         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                            <button
-                                type="button"
-                                className="flex items-center justify-center gap-2 rounded-lg bg-[#c6ff00] px-5 py-3 text-xs font-bold text-black transition hover:bg-[#b5eb00]"
-                            >
-                                <span>▣</span>
-                                Add to today&apos;s plan
-                            </button>
-
-                            <button
-                                type="button"
-                                className="flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-transparent px-5 py-3 text-xs font-medium text-gray-300 transition hover:border-white/20 hover:bg-white/5"
-                            >
-                                <span>♡</span>
-                                Save for later
-                            </button>
+                                <CartButton equipment= {equipment}/>
                         </div>
                     </div>
                 </div>

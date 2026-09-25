@@ -2,6 +2,7 @@ import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import Navbar from "./components/Navbar/Navbar";
+import CartProvider from "./context/CartContext";
 // import Footer from "./components/Footer/Footer";
 
 const inter = Inter({
@@ -19,10 +20,20 @@ export default function RootLayout({ children }:LayoutProps<"/">) {
   return (
     <html lang="en">
       <body className={`${inter.variable} ${oswald.variable}  ` }>
-         <ToastContainer/>
+        <CartProvider>
+         <ToastContainer
+  toastStyle={{
+    maxWidth: '200px',
+    minHeight: '50px',
+    fontSize: '13px',
+    padding: '8px 12px'
+  }}
+/>
         <Navbar/>
         {children}
+
         {/* <Footer/> */}
+        </CartProvider>
       </body>
     </html>
   );

@@ -1,36 +1,43 @@
 "use client";
 
+import { EquipmentContext } from "@/app/context/CartContext";
 import Link from "next/link";
-import { useState } from "react";
+import { useContext } from "react";
 
 export default function MobileNavToggle() {
-  const [planCount, setplanCount] = useState(0);
-  const [savedCount, setsavedCount] = useState(0);
+  const context = useContext(EquipmentContext);
+
+  if (!context) {
+    throw new Error(
+      "MobileNavToggle must be used inside CartProvider"
+    );
+  }
+
+  const { addPlan, savePlan } = context;
 
   return (
-    <div className="flex items-center gap-6  px-4 py-3">
+    <div className="flex items-center gap-6 px-4 py-3">
       {/* Plan Button */}
       <Link href="/MyPlan">
-        <button className="flex items-center gap-2 text-sm text-gray-300  cursor-pointer">
-        <span>Plan</span>
+        <button className="flex cursor-pointer items-center gap-2 text-sm text-gray-300">
+          <span>Plan</span>
 
-        <span className="flex h-6 w-6 items-center justify-center rounded-full text-xs font-medium bg-[#c6ff00] text-black">
-          {planCount}
-        </span>
-      </button>
+          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#c6ff00] text-xs font-medium text-black">
+            {addPlan.length > 0 ? addPlan.length : 0}
+          </span>
+        </button>
       </Link>
 
       {/* Saved Button */}
-        <Link href="/MyPlan">
-                <button className="flex items-center gap-2 text-sm text-gray-300  cursor-pointer">
-        <span>Saved</span>
+      <Link href="/MyPlan">
+        <button className="flex cursor-pointer items-center gap-2 text-sm text-gray-300">
+          <span>Saved</span>
 
-        <span className="flex h-6 w-6 items-center justify-center rounded-full text-xs font-medium bg-[#c6ff00] text-black">
-          {savedCount}
-        </span>
-      </button>
+          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#c6ff00] text-xs font-medium text-black">
+            {savePlan.length > 0 ? savePlan.length : 0}
+          </span>
+        </button>
       </Link>
     </div>
   );
 }
-
