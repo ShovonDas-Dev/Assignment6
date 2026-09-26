@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className=" border-t border-[#1c1f24] bg-[#090a0c]">
+        <footer className="border-t border-[#1c1f24] bg-[#090a0c]">
             <div
                 className="
           mx-auto flex min-h-[68px] max-w-[1400px]
@@ -22,13 +22,13 @@ const Footer = () => {
                     </div>
 
                     {/* Logo Text */}
-                    <span className="text-[10px] font-bold uppercase tracking-wide font-oswald text-white">
+                    <span className="font-oswald text-[10px] font-bold uppercase tracking-wide text-white">
                         FitLog
                     </span>
                 </div>
 
                 {/* Copyright */}
-                <p className="text-center text-[8px] font-inter md:text-[10px] text-[#666b74] sm:text-right sm:text-[9px]">
+                <p className="font-inter text-center text-[8px] text-[#666b74] sm:text-right sm:text-[9px] md:text-[10px]">
                     © 2026 FitLog — Workout Library. Train hard, log honest.
                 </p>
             </div>

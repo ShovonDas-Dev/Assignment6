@@ -3,13 +3,13 @@ import HerImage from "../../../../public/banner.png";
 
 const HeroSection = () => {
   return (
-    <section className="mx-auto max-w-[1400px] px-3 py-4">
+    <section className="mx-auto max-w-[1400px] px-3  my-10">
       <div
         className="
           flex flex-col  rounded-lg border border-[#25282f]
           bg-[#15171c] px-5 py-6
           sm:px-6 sm:py-8
-          md:flex-row md:px-8 md:py-8
+          md:flex-row md:px-8 md:py-16
           lg:px-10
         "
       >
@@ -23,7 +23,7 @@ const HeroSection = () => {
           "
         >
           {/* Small Heading */}
-          <p className="mb-3 text-[8px] font-bold font-inter uppercase tracking-[0.08em] text-[#c6ff00] sm:text-[9px]">
+          <p className="mb-3 text-[8px] font-bold font-inter uppercase tracking-[0.08em] text-[#c6ff00] sm:text-[12px]">
             Workout Library
           </p>
 
@@ -50,6 +50,7 @@ const HeroSection = () => {
               md:text-[13px]
               lg:text-[14px]
               font-inter
+              pt-5
           "
           >
             FitLog is a dark, no-nonsense gym companion: pick a lift, lock it
@@ -69,6 +70,7 @@ const HeroSection = () => {
               transition hover:bg-[#b5ed00]
               sm:px-6 sm:py-3
               font-inter
+              
               
             "
           >
@@ -94,7 +96,7 @@ const HeroSection = () => {
               h-auto
               w-[180px]
               sm:w-[210px]
-              md:w-[330px] "
+              md:w-[400px] "
           />
         </div>
       </div>

@@ -3,7 +3,7 @@ import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import Navbar from "./components/Navbar/Navbar";
 import CartProvider from "./context/CartContext";
-// import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,7 +19,7 @@ const oswald = Oswald({
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${oswald.variable}  `}>
+      <body className={`${inter.variable} ${oswald.variable} pt-[var(--navbar-height)]   `}>
         <CartProvider>
           <ToastContainer
             toastStyle={{
@@ -33,7 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Navbar />
           {children}
 
-          {/* <Footer/> */}
+          <Footer/>
         </CartProvider>
       </body>
     </html>

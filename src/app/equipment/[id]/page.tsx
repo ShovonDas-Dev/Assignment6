@@ -1,22 +1,20 @@
-
 import CartButton from '@/app/components/Button/CartButton'
 import Image from 'next/image'
-import React from 'react'
 
-const page = async ({ params }: { params: { id: number } }) => {
+const Page = async ({ params }: { params: { id: string } }) => {
     const { id } = await params
     const equipmentPromis = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`)
     const equipment = await equipmentPromis.json()
-    console.log(equipment)
+
     return (
-        <section className="w-full bg-[#0d0f13] py-10 sm:py-14">
+        <section className="w-full bg-[#0d0f13] py-8 sm:py-14">
             <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
 
                 {/* Main Content */}
-                <div className="grid grid-cols-1 items-start gap-7 lg:grid-cols-[1fr_1fr] xl:gap-9">
+                <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[1fr_1fr] lg:gap-7 xl:gap-9">
 
                     {/* ================= IMAGE ================= */}
-                    <div className="relative h-[350px] w-full overflow-hidden rounded-xl sm:h-[450px] lg:h-[520px]">
+                    <div className="relative h-[260px] w-full overflow-hidden rounded-xl xs:h-[300px] sm:h-[400px] lg:h-[520px]">
                         <Image
                             src={equipment.image}
                             alt={equipment.name}
@@ -28,18 +26,18 @@ const page = async ({ params }: { params: { id: number } }) => {
                     {/* ================= DETAILS ================= */}
                     <div>
                         {/* Title */}
-                        <h1 className="font-oswald text-3xl font-bold uppercase leading-tight text-white sm:text-4xl">
+                        <h1 className="font-oswald text-2xl font-bold uppercase leading-tight text-white sm:text-3xl lg:text-4xl">
                             {equipment.name}
                         </h1>
 
                         {/* Description */}
-                        <p className=" font-inter mt-3 max-w-2xl text-sm leading-6 text-gray-400">
+                        <p className="font-inter mt-3 max-w-2xl text-sm leading-6 text-gray-400">
                             {equipment.description}
                         </p>
 
                         {/* Muscle Groups */}
-                        <div className=" font-inter mt-4 flex flex-wrap gap-2">
-                            {equipment.muscleGroups.map((muscle) => (
+                        <div className="font-inter mt-4 flex flex-wrap gap-2">
+                            {equipment.muscleGroups.map((muscle: string) => (
                                 <span
                                     key={muscle}
                                     className="rounded-full bg-[#c6ff00] px-3 py-1 text-xs font-bold text-black"
@@ -52,82 +50,30 @@ const page = async ({ params }: { params: { id: number } }) => {
                         {/* ================= INFO BOX ================= */}
                         <div className="mt-5 overflow-hidden rounded-xl border border-white/5 bg-[#15181e]">
 
-                            {/* Equipment */}
-                            <div className="flex items-center justify-between border-b border-white/5 px-4 py-3">
-                                <span className= "font-inter text-[10px] font-bold uppercase tracking-wider text-gray-500">
-                                    Equipment
-                                </span>
+                            {[
+                                { label: 'Equipment', value: equipment.equipment },
+                                { label: 'Difficulty', value: equipment.difficulty },
+                                { label: 'Sets', value: equipment.sets },
+                                { label: 'Reps', value: equipment.reps },
+                                { label: 'Duration', value: `${equipment.duration} min` },
+                                { label: 'Calories', value: `${equipment.caloriesBurned} kcal` },
+                                { label: 'Rating', value: equipment.rating },
+                            ].map((row, i, arr) => (
+                                <div
+                                    key={row.label}
+                                    className={`flex items-center justify-between gap-3 px-4 py-3 ${
+                                        i !== arr.length - 1 ? 'border-b border-white/5' : ''
+                                    }`}
+                                >
+                                    <span className="font-inter shrink-0 text-[10px] font-bold uppercase tracking-wider text-gray-500">
+                                        {row.label}
+                                    </span>
 
-                                <span className=" font-inter text-xs text-gray-200">
-                                    {equipment.equipment}
-                                </span>
-                            </div>
-
-                            {/* Difficulty */}
-                            <div className="flex items-center justify-between border-b border-white/5 px-4 py-3">
-                                <span className=" font-inter text-[10px] font-bold uppercase tracking-wider text-gray-500">
-                                    Difficulty
-                                </span>
-
-                                <span className=" font-inter text-xs text-gray-200">
-                                    {equipment.difficulty}
-                                </span>
-                            </div>
-
-                            {/* Sets */}
-                            <div className="flex items-center justify-between border-b border-white/5 px-4 py-3">
-                                <span className=" font-inter text-[10px] font-bold uppercase tracking-wider text-gray-500">
-                                    Sets
-                                </span>
-
-                                <span className=" font-inter text-xs text-gray-200">
-                                    {equipment.sets}
-                                </span>
-                            </div>
-
-                            {/* Reps */}
-                            <div className="flex items-center justify-between border-b border-white/5 px-4 py-3">
-                                <span className=" font-inter text-[10px] font-bold uppercase tracking-wider text-gray-500">
-                                    Reps
-                                </span>
-
-                                <span className=" font-inter text-xs text-gray-200">
-                                    {equipment.reps}
-                                </span>
-                            </div>
-
-                            {/* Duration */}
-                            <div className="flex items-center justify-between border-b border-white/5 px-4 py-3">
-                                <span className=" font-inter text-[10px] font-bold uppercase tracking-wider text-gray-500">
-                                    Duration
-                                </span>
-
-                                <span className=" font-inter text-xs text-gray-200">
-                                    {equipment.duration} min
-                                </span>
-                            </div>
-
-                            {/* Calories */}
-                            <div className="flex items-center justify-between border-b border-white/5 px-4 py-3">
-                                <span className=" font-inter text-[10px] font-bold uppercase tracking-wider text-gray-500">
-                                    Calories
-                                </span>
-
-                                <span className=" font-inter text-xs text-gray-200">
-                                    {equipment.caloriesBurned} kcal
-                                </span>
-                            </div>
-
-                            {/* Rating */}
-                            <div className="flex items-center justify-between px-4 py-3">
-                                <span className=" font-inter text-[10px] font-bold uppercase tracking-wider text-gray-500">
-                                    Rating
-                                </span>
-
-                                <span className=" font-inter text-xs text-gray-200">
-                                    {equipment.rating}
-                                </span>
-                            </div>
+                                    <span className="font-inter truncate text-right text-xs text-gray-200">
+                                        {row.value}
+                                    </span>
+                                </div>
+                            ))}
                         </div>
 
                         {/* ================= INSTRUCTIONS ================= */}
@@ -137,12 +83,12 @@ const page = async ({ params }: { params: { id: number } }) => {
                             </h2>
 
                             <ol className="mt-3 space-y-2.5">
-                                {equipment.instructions.map((instruction, index) => (
+                                {equipment.instructions.map((instruction: string, index: number) => (
                                     <li
                                         key={index}
                                         className="flex gap-3 text-xs leading-5 text-gray-400"
                                     >
-                                        <span className="shrink-0 font-inter  text-gray-500">
+                                        <span className="font-inter shrink-0 text-gray-500">
                                             {index + 1}.
                                         </span>
 
@@ -154,7 +100,7 @@ const page = async ({ params }: { params: { id: number } }) => {
 
                         {/* ================= BUTTONS ================= */}
                         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                                <CartButton equipment= {equipment}/>
+                            <CartButton equipment={equipment} />
                         </div>
                     </div>
                 </div>
@@ -163,4 +109,4 @@ const page = async ({ params }: { params: { id: number } }) => {
     )
 }
 
-export default page
+export default Page

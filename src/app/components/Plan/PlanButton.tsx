@@ -18,15 +18,15 @@ const PlanButton = () => {
     <div className='grid grid-cols-3  py-8 my-10 bg-black rounded-2xl  '>
         <div className='flex flex-col items-center'>
             <span className='text-gray-5000 font-inter'>Excercise</span>
-            <button className='text-4xl text-[#CCFF00] font-bold font-oswald'>{excercise}</button>
+            <button className='text-xl md:text-4xl text-[#CCFF00] font-bold font-oswald'>{excercise}</button>
         </div>
         <div className='flex flex-col items-center'>
             <span className='text-gray-5000 font-inter'>Minutes</span>
-            <button className='text-4xl font-bold font-oswald'>{totalMinute}</button>
+            <button className='text-xl md:text-4xl font-bold font-oswald'>{totalMinute}</button>
         </div>
         <div className='flex flex-col items-center'>
             <span className='text-gray-5000 font-inter'>Calories</span>
-            <button className='text-4xl font-bold font-oswald'>{totalCalories}</button>
+            <button className='text-xl md:text-4xl font-bold font-oswald'>{totalCalories}</button>
         </div>
       </div>
   )
