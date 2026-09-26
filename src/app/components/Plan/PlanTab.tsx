@@ -77,7 +77,7 @@ const PlanTab = () => {
                 {activeTab === "today" && (
                     <div className="rounded-xl border border-dashed border-[#292e36] py-10 px-4 sm:px-0 space-y-3 text-center">
                         {addPlan.length > 0 ? (
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
+                            <div className="grid grid-cols-1  gap-4 text-left">
                                 {addItem.map((workout: GymData) => (
                                     <TodaysPlanCart
                                         key={workout.id}
@@ -108,7 +108,7 @@ const PlanTab = () => {
                 {activeTab === "saved" && (
                     <div className="rounded-xl border border-dashed border-[#292e36] py-10 px-4 sm:px-0 space-y-3 text-center">
                         {savePlan.length > 0 ? (
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
+                            <div className="grid grid-cols-1   gap-4 text-left">
                                 {saveItem.map((workout) => (
                                     <SavePlanCart
                                         key={workout.id}

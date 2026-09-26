@@ -2,7 +2,7 @@ import { GymData } from '@/app/Interface/GymData'
 import CartItem from '../components/Cart/CartItem'
 
 const CartSection = async () => {
-    const gymDataPromise = await fetch("https://api.abcz.workers.dev/api/fitlog")
+    const gymDataPromise = await fetch("https://api.api-store.workers.dev/api/fitlog")
     const gymData = await gymDataPromise.json()
 
     return (

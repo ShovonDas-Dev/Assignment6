@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const Page = async ({ params }: { params: { id: string } }) => {
     const { id } = await params
-    const equipmentPromis = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`)
+    const equipmentPromis = await fetch(`https://api.api-store.workers.dev/api/fitlog/${id}`)
     const equipment = await equipmentPromis.json()
 
     return (
@@ -37,7 +37,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
 
                         {/* Muscle Groups */}
                         <div className="font-inter mt-4 flex flex-wrap gap-2">
-                            {equipment.muscleGroups.map((muscle: string) => (
+                            {equipment?.muscleGroups?.map((muscle: string) => (
                                 <span
                                     key={muscle}
                                     className="rounded-full bg-[#c6ff00] px-3 py-1 text-xs font-bold text-black"
@@ -83,7 +83,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
                             </h2>
 
                             <ol className="mt-3 space-y-2.5">
-                                {equipment.instructions.map((instruction: string, index: number) => (
+                                {equipment?.muscleGroups?.map((instruction: string, index: number) => (
                                     <li
                                         key={index}
                                         className="flex gap-3 text-xs leading-5 text-gray-400"
