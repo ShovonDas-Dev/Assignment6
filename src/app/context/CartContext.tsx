@@ -1,9 +1,25 @@
 "use client";
 
-import { createContext, useState } from "react";
+import { createContext, Dispatch, SetStateAction, useState } from "react";
 import { GymData } from "../Interface/GymData";
 
-export const EquipmentContext = createContext<any>(null);
+type EquipmentContextType = {
+  addPlan: GymData[];
+  setAddPlan: Dispatch<SetStateAction<GymData[]>>;
+  savePlan: GymData[];
+  setSavePlan: Dispatch<SetStateAction<GymData[]>>;
+  activeTab: string;
+  setActiveTab: Dispatch<SetStateAction<string>>;
+};
+
+export const EquipmentContext = createContext<EquipmentContextType>({
+  addPlan: [],
+  setAddPlan: () => {},
+  savePlan: [],
+  setSavePlan: () => {},
+  activeTab: "saved",
+  setActiveTab: () => {},
+});
 
 const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const [addPlan, setAddPlan] = useState<GymData[]>([]);

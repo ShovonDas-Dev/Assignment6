@@ -5,7 +5,7 @@ import { useContext } from 'react'
 import { toast } from 'react-toastify'
 
 const TodaysPlanButton = ({ workout }: { workout: GymData }) => {
-  const { addPlan, setAddPlan } = useContext(EquipmentContext)
+  const {  setAddPlan } = useContext(EquipmentContext)
 
   const handleDelet = () => {
     setAddPlan((prev) => prev.filter((item) => item.id !== workout.id))
@@ -16,6 +16,7 @@ const TodaysPlanButton = ({ workout }: { workout: GymData }) => {
     setAddPlan((prev) => prev.filter((item) => item.id !== workout.id))
     toast.success("This item mark as done")
   }
+
 
   return (
     <div className="flex w-full flex-wrap items-center gap-2 sm:w-auto sm:flex-nowrap sm:gap-4">

@@ -5,7 +5,7 @@ import { useContext } from 'react'
 import { toast } from 'react-toastify'
 
 const SavePlanButton = ({ workout }: { workout: GymData }) => {
-  const { savePlan, setSavePlan } = useContext(EquipmentContext)
+  const {  setSavePlan } = useContext(EquipmentContext)
 
   const handleDelet = () => {
     setSavePlan((prev) => prev.filter((item) => item.id !== workout.id))
