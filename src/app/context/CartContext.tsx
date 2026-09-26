@@ -8,6 +8,7 @@ export const EquipmentContext = createContext<any>(null);
 const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const [addPlan, setAddPlan] = useState<GymData[]>([]);
   const [savePlan, setSavePlan] = useState<GymData[]>([]);
+  const [activeTab, setActiveTab] = useState("saved");
 
   return (
     <EquipmentContext.Provider
@@ -16,6 +17,8 @@ const CartProvider = ({ children }: { children: React.ReactNode }) => {
         setAddPlan,
         savePlan,
         setSavePlan,
+        activeTab,
+        setActiveTab
       }}
     >
       {children}

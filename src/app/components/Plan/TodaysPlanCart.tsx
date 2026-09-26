@@ -1,6 +1,7 @@
 import { GymData } from "@/app/Interface/GymData";
 import Image from "next/image";
 import Link from "next/link";
+import TodaysPlanButton from "./TodaysPlanButton";
 
 const TodaysPlanCart = ({ workout }: { workout: GymData }) => {
 
@@ -8,7 +9,7 @@ const TodaysPlanCart = ({ workout }: { workout: GymData }) => {
 
     
     <div className="w-full rounded-xl border border-[#252a32] bg-[#15181e] p-3 sm:p-4">
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+      <div className="flex gap-4 sm:flex-row sm:items-center">
         
         {/* Left Side */}
         <div className="flex min-w-0 flex-1  gap-10">
@@ -19,7 +20,7 @@ const TodaysPlanCart = ({ workout }: { workout: GymData }) => {
             alt={workout.name}
             width={95}
             height={64}
-            className="h-16 w-24  rounded-lg object-cover sm:h-16 sm:w-28"
+            // className="h-16 w-24  rounded-lg object-cover sm:h-16 sm:w-28"
           />
 
           {/* Workout Info */}
@@ -60,28 +61,9 @@ const TodaysPlanCart = ({ workout }: { workout: GymData }) => {
         <div className="flex items-center justify-between gap-2 sm:justify-end">
           
           {/* View Details */}
-          <Link
-          href={`/equipment/${workout.id}`}
-          className="rounded-full border border-[#353b45] px-4 py-2 text-[10px] text-[#d1d4d8] transition hover:border-[#c8ff00] hover:text-white sm:text-xs"
-        >
-          View Details
-        </Link>
-
-          {/* Mark Done */}
-          <button
-            className="flex items-center gap-1.5 rounded-full bg-[#c8ff00] px-4 py-2 text-[10px] font-semibold text-black transition hover:bg-[#b8ed00] sm:text-xs"
-          >
-            <span>✓</span>
-            Mark as Done
-          </button>
-
-          {/* Close */}
-          <button
-            className="ml-1 px-1 text-lg text-[#626873] transition hover:text-white"
-            aria-label="Remove workout"
-          >
-            ×
-          </button>
+        <div>
+            <TodaysPlanButton key={workout.id} workout={workout} />
+        </div>
         </div>
       </div>
     </div>

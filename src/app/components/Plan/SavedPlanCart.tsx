@@ -1,6 +1,7 @@
 import { GymData } from "@/app/Interface/GymData";
 import Image from "next/image";
 import Link from "next/link";
+import SavePlanButton from "./SavePlanButton";
 
 const SavePlanCart = ({ workout }: { workout: GymData }) => {
 
@@ -57,25 +58,7 @@ const SavePlanCart = ({ workout }: { workout: GymData }) => {
         </div>
 
         {/* Right Side */}
-        <div className="flex items-center justify-between gap-2 sm:justify-end">
-          
-          {/* View Details */}
-        <Link
-          href={`/equipment/${workout.id}`}
-          className="rounded-full border border-[#353b45] px-4 py-2 text-[10px] text-[#d1d4d8] transition hover:border-[#c8ff00] hover:text-white sm:text-xs"
-        >
-          View Details
-        </Link>
-        
-
-          {/* Close */}
-          <button
-            className="ml-1 px-1 text-lg text-[#626873] transition hover:text-white"
-            aria-label="Remove workout"
-          >
-            ×
-          </button>
-        </div>
+        <SavePlanButton key={workout.id} workout={workout}/>
       </div>
     </div>
   );

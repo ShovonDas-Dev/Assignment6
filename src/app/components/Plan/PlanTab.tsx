@@ -5,10 +5,11 @@ import { useContext, useState } from "react";
 import TodaysPlanCart from "./TodaysPlanCart";
 import { GymData } from "@/app/Interface/GymData";
 import SavePlanCart from "./SavedPlanCart";
+import Link from "next/link";
 
 const PlanTab = () => {
-    const [activeTab, setActiveTab] = useState("saved");
-    const { addPlan, savePlan, setAddPlan, setSavePlan } = useContext(EquipmentContext)
+    
+    const { addPlan, savePlan, setAddPlan, setSavePlan , activeTab, setActiveTab } = useContext(EquipmentContext)
     console.log(addPlan)
 
     return (
@@ -41,7 +42,7 @@ const PlanTab = () => {
             {/* Tab Content */}
             <div className="mt-4">
                 {activeTab === "today" && (
-                    <div className="rounded-xl border border-dashed border-[#292e36] py-20 text-center">
+                    <div className="rounded-xl border border-dashed border-[#292e36] py-10 space-y-3 text-center">
                         {addPlan.length > 0 ? addPlan.map((workout: GymData) => {
                             return (
                                 <TodaysPlanCart
@@ -58,15 +59,17 @@ const PlanTab = () => {
                                 Browse the library and add a lift to get today moving.
                             </p>
 
+                            <Link href={"/"}>
                             <button className="mt-5 rounded-full bg-[#c8ff00] px-6 py-2.5 text-xs font-semibold text-black transition hover:bg-[#b8ed00]">
                                 Go to workouts
                             </button>
+                            </Link>
                         </div>}
                     </div>
                 )}
 
                 {activeTab === "saved" && (
-                    <div className="rounded-xl border border-dashed border-[#292e36] py-20 text-center">
+                    <div className="rounded-xl border border-dashed border-[#292e36] py-10 space-y-3  text-center">
                         {savePlan.length > 0 ? savePlan.map((workout: GymData) => {
                             return (
                                 <SavePlanCart
@@ -83,9 +86,11 @@ const PlanTab = () => {
                                 Browse the library and add a lift to get today moving.
                             </p>
 
+                            <Link href={"/"}>
                             <button className="mt-5 rounded-full bg-[#c8ff00] px-6 py-2.5 text-xs font-semibold text-black transition hover:bg-[#b8ed00]">
                                 Go to workouts
                             </button>
+                            </Link>
                         </div>}
                     </div>
                 )}
