@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FitLog 🏋️‍♂️
 
-## Getting Started
+**FitLog** is a workout library and daily plan tracker built with Next.js. Browse exercises, add them to today's plan, save favorites for later, and track your total exercises, minutes, and calories at a glance.
 
-First, run the development server:
+🔗 **Live Site:** [https://fitlog-nine-azure.vercel.app/](https://fitlog-nine-azure.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 📚 **Exercise Library** — Browse a full list of workouts fetched from an external API, each with images, equipment, difficulty, sets, reps, duration, calories, and rating.
+- 📝 **Today's Plan** — Add exercises to your daily plan, mark them as done, or remove them.
+- ⭐ **Saved Plan** — Save exercises for later and manage them separately from today's plan.
+- 📊 **Plan Summary** — See total exercises, total minutes, and total calories for the active tab (Today's Plan / Saved).
+- 🔀 **Sorting** — Sort your plan by duration, rating, or calories burned.
+- 📱 **Fully Responsive** — Built with Tailwind CSS using both viewport breakpoints and container queries (`@container`) so cards adapt correctly whether the screen is small or the layout grid is narrow.
+- 🔍 **Exercise Details Page** — Dynamic route for each exercise showing full description, muscle groups, instructions, and stats.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework:** [Next.js](https://nextjs.org/) (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **State Management:** React Context API
+- **Notifications:** react-toastify
+- **Deployment:** [Vercel](https://vercel.com/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Author
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Built by **Shovon Das** as part of a Programming Hero assignment.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## License
+
+This project is for educational purposes.
