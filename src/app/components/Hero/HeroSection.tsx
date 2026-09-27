@@ -1,5 +1,6 @@
 import Image from "next/image";
 import HerImage from "../../../../public/banner.png";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -35,7 +36,8 @@ const HeroSection = () => {
               sm:text-[32px]
               md:text-[35px]
               lg:text-5xl
-              font-oswald">
+              font-oswald"
+          >
             Train with intent. Log
             <br />
             every set.
@@ -60,22 +62,12 @@ const HeroSection = () => {
           </p>
 
           {/* Button */}
-          <button
-            type="button"
-            className="
-              mt-4 rounded-[4px]
-              bg-[#c6ff00]
-              px-5 py-2.5
-              text-[10px] font-extrabold uppercase text-black
-              transition hover:bg-[#b5ed00]
-              sm:px-6 sm:py-3
-              font-inter
-              
-              
-            "
+          <Link
+            href="#CartItem"
+            className="mt-4 inline-block rounded-[4px] bg-[#c6ff00] px-5 py-2.5 text-[10px] font-extrabold uppercase text-black transition hover:bg-[#b5ed00] sm:px-6 sm:py-3 font-inter"
           >
             Browse Workouts
-          </button>
+          </Link>
         </div>
 
         {/* Right Workout Image */}

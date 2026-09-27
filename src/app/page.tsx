@@ -8,7 +8,9 @@ export default function Home() {
     <>
       
      <HeroSection/>
-     <CartSection/>
+      <div id="CartItem">
+        <CartSection />
+      </div>
       
     </>
   );
