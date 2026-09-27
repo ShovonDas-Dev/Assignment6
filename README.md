@@ -2,7 +2,7 @@
 
 **FitLog** is a workout library and daily plan tracker built with Next.js. Browse exercises, add them to today's plan, save favorites for later, and track your total exercises, minutes, and calories at a glance.
 
-🔗 **Live Site:** [https://fitlog-nine-azure.vercel.app/](https://fitlog-nine-azure.vercel.app/)
+🔗 **Live Site:** https://fitlog96.vercel.app/
 
 
 ---
